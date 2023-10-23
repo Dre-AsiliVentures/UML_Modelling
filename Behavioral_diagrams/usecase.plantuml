@@ -1,0 +1,44 @@
+   @startuml Use_Case_Diagram
+   rectangle Car_Sales{
+   usecase MonthlyArrangement as "Pay Monthly Arrangement"
+   usecase monthlyDesc as "Make an Offer 
+   ----
+   **extension points**
+   Pay Monthly Arrangements"
+   usecase update_cus_info as "Update Customer Info"
+   usecase exist_cus_info as "Existing Customer Info
+   ----
+   **extension points**
+   Update Customer Info"
+   usecase accept_offer as "Accept Offer"
+   usecase prepare_contract as "Prepare the contract"
+   usecase manage_offers as "Manage Offers"
+   usecase new_customer_offer as "New Customer Offer"
+   usecase create_new_customer_offer as "Create New Customer"
+   }
+
+   actor manager as "Manager"
+   actor sales as "Sales
+   Person"
+   actor Customer
+   actor NewCustomer as "New 
+   Customer"
+   actor oldCustomer as "Old 
+   Customer"
+   skinparam linetype polyline
+   skinparam linetype ortho
+   manager--update_cus_info
+   manager--accept_offer
+   sales--accept_offer
+   sales--prepare_contract
+   NewCustomer--new_customer_offer
+   accept_offer-.>manage_offers : <<include>>
+   prepare_contract-.>manage_offers : <<include>>
+   new_customer_offer-.>create_new_customer_offer : <<include>>
+   oldCustomer--exist_cus_info
+   MonthlyArrangement-.>monthlyDesc
+   exist_cus_info-->monthlyDesc
+   create_new_customer_offer-->monthlyDesc
+   NewCustomer-right-Customer
+   oldCustomer-right-Customer
+   @enduml

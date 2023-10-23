@@ -1,0 +1,25 @@
+```plantuml
+   @startuml SequenceDiagram
+   actor Customer
+   participant SearchPage as ":SearchPage"
+   participant SearchResults as ":Search\nResults Page"
+   participant Catalog as ":Catalog"
+   participant Search_results as ":Search\nResults"
+   Customer->SearchPage : 1:onSearch(author)
+   SearchPage->SearchPage :1.1:validateSearchCriteria()
+   alt author entered
+      SearchPage -> Catalog :1.2 searchByAuthor(author)
+      activate Catalog
+      Catalog->Search_results :1.2.1: create()
+      activate Search_results
+      Search_results-> SearchResults :1.2.1.1 display()
+      activate SearchResults
+      deactivate Catalog
+      deactivate SearchResults
+      deactivate Search_results
+   else author not entered
+      SearchPage->SearchPage :1.3.displayErrorMessage()
+   end
+
+
+   @enduml

@@ -1,0 +1,28 @@
+   @startuml ActivityDiagram
+   skinparam linetype polyline
+   skinparam linetype ortho
+   |Sales Person|
+   start
+   :Set-up Appointment with client;
+   if (Location?) then (Our Office)
+   |Consultant|
+   |Administrator|
+   :Prepare a conference room;
+   |Sales Person|
+   else (client's office)
+   |Consultant|
+   :Prepare a laptop;
+   : Meet the Client;
+   |Sales Person|
+   :Send a follow-up letter;
+   if (Deal?) then (Yes)
+   |Consultant|
+   :Create Proposal;
+   :Send Proposal;
+   end
+   |Sales Person|
+   else(No)
+   end
+   |Consultant|
+   @enduml
+
