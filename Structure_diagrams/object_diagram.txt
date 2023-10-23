@@ -1,0 +1,11 @@
+```plantuml
+   @startuml ObjectDiagram
+   object Company
+   object Department
+   object Person
+   object ContactInformation
+   Company -- Department
+   Department -- Person
+   Person -- ContactInformation
+   @enduml
+   

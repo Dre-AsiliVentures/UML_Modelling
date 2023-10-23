@@ -1,0 +1,20 @@
+```plantuml
+   @startuml ObjectDiagram
+   object Company
+   object Department_1
+   object Department_2
+   object Person
+   object ContactInformation
+   Company -- Department_1
+   Company -- Department_2
+   Department_1 -- Person
+   Person -- ContactInformation
+   Company : name = Versailles
+   Department_1 : name = Research & Development
+   Department_2 : name = Sales
+   ContactInformation : name = Faulu Mtanashati
+   ContactInformation : title = Enterprise Researcher
+   ContactInformation : employeeID = VERSAIL-023-3423
+   ContactInformation : email = faulu_mtanashati@versailles.com
+   @enduml
+   

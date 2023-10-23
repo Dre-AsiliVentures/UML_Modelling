@@ -1,0 +1,16 @@
+@startuml ClassDiagram
+   class MyParentClass {
+     + public_attribute1: int
+     + operation1()
+   }
+   class MyFirstbornClass {
+     # protected_attribute1: int
+     + operation1()
+   }
+   class MySecondClass {
+     - private_attribute1: float
+     + operation1()
+   }
+   MyParentClass <|--MyFirstbornClass
+   MySecondClass ->MyFirstbornClass
+   @enduml

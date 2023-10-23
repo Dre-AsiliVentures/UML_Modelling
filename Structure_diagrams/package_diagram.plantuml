@@ -1,0 +1,38 @@
+```plantuml
+   @startuml Package Diagram
+   package Users {
+     [users]
+   }
+   package Presentation_Layer {
+     package [User_Interface] as "User Interface"
+     folder pack
+    
+   }
+   package Service_Layer {
+     package [User_Interface_2] as "User Interface"
+     package Presentation
+    
+   }
+   package Business_Layer {
+     package [Application_Facade]
+     package [Business Workflow]
+     package [Business Components]
+     package [Business Entities]
+    
+   }
+   package Data_Layer{
+    package [Data_Access]
+    package [Service_Agents]
+   }
+   [Application_Facade]--->[Business Workflow]
+   [Application_Facade]--->[Business Components]
+   [Application_Facade]--->[Business Entities]
+   skinparam linetype polyline
+   skinparam linetype ortho
+   Users -right->Presentation_Layer
+   Presentation_Layer -down-Business_Layer
+   Presentation_Layer--Service_Layer
+   Service_Layer --Data_Layer
+   pack -right->[User_Interface]
+   
+   @enduml

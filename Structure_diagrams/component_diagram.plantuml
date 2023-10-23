@@ -1,0 +1,8 @@
+@startuml ComponentDiagram
+
+
+component [First Component]
+
+[First Component] -right-( COM_INTERFACE : Required_Interface
+[Second Component] -left- COM_INTERFACE : Provided_Interface
+@enduml

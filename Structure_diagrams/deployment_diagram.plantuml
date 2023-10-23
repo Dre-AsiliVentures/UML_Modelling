@@ -1,0 +1,31 @@
+   @startuml DeploymentDiagram
+   node Clients {
+    node Console
+    node Kiosk
+   }
+
+   database Database
+   rectangle "Server" <<Server>> {
+    node Caching_Server
+    component http.exe
+    component rting.exe
+    node Caching_Server_2
+    component dbadmin.exe
+    component tktmstr.exe
+    
+}
+   ' Set the background color for the "Server" rectangle
+skinparam rectangle {
+    BackgroundColor yellow
+}
+
+   Caching_Server--- http.exe :<<deploy>>
+   Caching_Server ---rting.exe :<<deploy>>
+   Caching_Server_2 ---dbadmin.exe :<<deploy>>
+   Caching_Server_2 -down-tktmstr.exe :<<deploy>>
+   skinparam linetype polyline
+   skinparam linetype ortho
+   Clients -up- Database
+   Console -right- Caching_Server
+   Kiosk -up- Caching_Server
+   @enduml
