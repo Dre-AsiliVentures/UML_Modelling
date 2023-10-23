@@ -14,13 +14,13 @@ UML Structural Diagrams -Object Diagram
 
 
 
-   C. Deployment Diagram
+   UML Structural Diagrams -Deployment Diagram
    
    ![DeploymentDiagram](https://github.com/Dre-AsiliVentures/UML_Modelling/assets/61284769/8cd88480-5a9c-44a9-9554-8f85e25e5af4)
 
 
 
-   D. Package Diagram
+   UML Structural Diagrams -Package Diagram
    
    ![Package Diagram](https://github.com/Dre-AsiliVentures/UML_Modelling/assets/61284769/a8e6e845-5d78-4848-b08d-b672c295e249)
 
